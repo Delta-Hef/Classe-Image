@@ -2,6 +2,10 @@
 #include <vector>
 #include "Image.hpp"
 
+// .\compile_and_run.ps1
+// g++ -std=c++17 -Wall -Wextra -O2 Image.cpp main.cpp -o test_image.exe
+// .\test_image.exe
+
 // Petit helper pour afficher un pixel (tous les canaux)
 void printPixel(const Image& img, int x, int y, const std::string& label)
 {
