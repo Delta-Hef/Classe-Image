@@ -27,17 +27,17 @@ private:
     void checkSameFormat(const Image& other) const;
 
 public:
-    Image();
-    Image(int w, int h, int ch, const std::string& model = "NONE");
-    Image(int w, int h, int ch, const std::string& model, unsigned char fillValue);
-    Image(int w, int h, int ch, const std::string& model, const std::vector<unsigned char>& buffer);
+    Image();// Défaut : 0×0, "NONE"
+    Image(int w, int h, int ch, const std::string& model = "NONE");// Dimensions + modèle
+    Image(int w, int h, int ch, const std::string& model, unsigned char fillValue);// Avec remplissage
+    Image(int w, int h, int ch, const std::string& model, const std::vector<unsigned char>& buffer);// Copie buffer
 
-    Image(const Image& other);
-    Image& operator=(const Image& other);
-    ~Image();
+    Image(const Image& other);// Constructeur de copie
+    Image& operator=(const Image& other);// Opérateur d'affectation
+    ~Image();// Destructeur
 
-    void load(const std::string& filepath);
-    void save(const std::string& filepath) const;
+    void load(const std::string& filepath);// Chargement depuis un fichier
+    void save(const std::string& filepath) const;// Sauvegarde dans un fichier
 
     inline int getWidth() const { return width; }
     inline int getHeight() const { return height; }

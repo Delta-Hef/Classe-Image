@@ -171,8 +171,8 @@ static void computeMaxSize(const Image& a, const Image& b, int& outW, int& outH)
 static unsigned char getOrZero(const Image& img, int x, int y, int c)
 {
     if (img.inBounds(x, y, c))
-        return img.getPixel(x, y, c);
-    return 0;
+        return img.getPixel(x, y, c);// pixel valide
+    return 0;// hors limites -> 0
 }
 
 Image Image::operator+(const Image& other) const
